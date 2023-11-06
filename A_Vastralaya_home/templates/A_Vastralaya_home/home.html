@@ -1,0 +1,296 @@
+{% extends 'A_Vastralaya_home/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} <title>Your Shopping Site</title> {% endcomment %}
+    <style>
+      /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url({% static '/static/images/Background.png' %});
+    background-size: cover;
+}
+
+/* Header styles */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.logo {
+  font-size: 24px; /* Adjust the size as needed */
+  font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+/* Hero section styles */
+.hero {
+    background: url('path-to-hero-image.jpg') center/cover no-repeat;
+    text-align: center;
+    padding: 100px 0;
+    color: white;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Product card styles */
+.product-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+.product-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product-card img {
+  max-width: 100%;
+}
+
+.product-card h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 16px;
+}
+
+.product-card .price {
+  font-weight: bold;
+}
+
+.product-card {
+  display: inline-block;
+  width: calc(33.33% - 20px); /* Adjust the width to fit the desired number of products per row */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px 0; /* Adjust margin as needed */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Add more CSS to further customize the text's appearance */
+
+/* Add more styles to customize your site further */
+
+    </style>
+    {% comment %} <link rel="stylesheet" href="{% static 'Test4Style.css' %}"> {% endcomment %}
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="text-warning">Welcome to A_Vastralaya on DIWALI SALE</h1>
+            <p>UPTO 50% OFF from 2 Nov - 11 Nov On all prodcuts</p>
+            <a href="/products/" class="cta-button">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="featured-products">
+      <h2 style="color:wheat">Featured Products</h2>
+  
+      <div class="product-card">
+          <img src="/static/images/Screenshot_2023-11-04_170016.png " alt="Product 1" height="100px;" width=50px;>
+          <h3>U.S. POLO ASSN. Men's Coat</h3>
+          {% comment %} <p>Product Dimensions ‏ : ‎ 38.1 x 30.5 x 7.6 cm; 450 Grams Date First Available ‏ : ‎ 25 August 2021 Manufacturer ‏ : ‎ EASTERN INDUSTRIES 1116 -17 BEVERLEY COMMERCIAL CENTRE 87-105 CHATHAM 310005 ASIN ‏ : ‎ B09DKZV66P Item model number ‏ : ‎ UDJCK1072 Country of Origin ‏ : ‎ India Department ‏ : ‎ mens Manufacturer ‏ : ‎ EASTERN INDUSTRIES 1116 -17 BEVERLEY COMMERCIAL CENTRE 87-105 CHATHAM 310005, EASTERN INDUSTRIES 1116 -17 BEVERLEY COMMERCIAL CENTRE 87-105 CHATHAM 310005 Packer ‏ : ‎ EASTERN IN</p> {% endcomment %}
+          <span class="price">₹2275.00</span>
+          <a href="/products/2/">View Details</a>
+      </div>
+  
+      <div class="product-card" style="alignment:middle">
+          <img src="/static/images/Screenshot_2023-11-04_171901.png" alt="Product 2" height="100px;" width="60px;">
+          <h3>INDO Women's Kurti</h3>
+          {% comment %} <p>Product Description 2</p> {% endcomment %}
+          <span class="price">₹749.00</span>
+          <a href="products/3/">View Details</a>
+      </div>
+  
+      <!-- Add more product cards as needed -->
+  </section>
+
+    <section class="new-arrivals; text-alignment:center;" >
+        <h2 style="color:wheat; text-alignmemnt:center;">New Arrivals</h2>
+        <div class="product-card" atyle="width:200px; height:160px;">
+          <img src="/static/images/Screenshot_2023-11-06_164851.png" alt="Product 1" height="100px;" width="60px;">
+          <h3>AJ BOY'S REGULAR FIT KURTA PYJAMA</h3>
+          {% comment %} <p>Product Description 1</p> {% endcomment %}
+          <span class="price"₹749.00></span>
+          <a href="products/8/">View Details</a>
+      </div>
+  
+      <div class="product-card" >
+          <img src="/static/images/Screenshot_2023-11-06_170408.png" alt="Product 2" height="80px;" width="40px;">
+          <h3>KANJIVARAM WOVEN SOFT SILK SAREE</h3>
+          {% comment %} <p>Product Description 2</p> {% endcomment %}
+          <span class="price">₹1349.00</span>
+          <a href="products/10/">View Details</a>
+      </div>
+    </section>
+</body>
+</html>
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A_Vastralaya</title>
+    <link rel="icon" href="{% static '/static/images/favicon.jpg' %}" type="image/x-icon">
+    <style>
+        /* Define the container for the slider */
+        .slider-container {
+            width: 100%;
+            max-width: 800px; /* Adjust the width as needed */
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* Define the slider */
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            flex: 0 0 100%; /* Each slide occupies 100% of the container */
+        }
+    </style>
+</head>
+<body>
+  <br>
+  <br>
+    <div class="slider-container">
+        <div class="slider">
+            <!-- Individual slides -->
+            <div class="slide">
+                <img src="/static/images/Screenshot 2023-11-02 203212 (Custom) (2).png" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="/static/images/Screenshot 2023-11-02 205548(Copy 1) (Custom) (1).png" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="image3.jpg" alt="Slide 3">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+
+        function nextSlide() {
+            if (currentIndex < slides.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const translateValue = -currentIndex * 100 + '%';
+            slider.style.transform = `translateX(${translateValue})`;
+        }
+
+        // Automatically change slide every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html> {% endcomment %}
+
+{% comment %} <a href="/products/"><img src="/static/images/Webpage_Photo.png" height="500px" width="600px" loading="lazy"></a> {% endcomment %}
+{% comment %} <div class="container col-xxl-8 px-4 py-5"> {% endcomment %}
+  {% comment %} <div class="row flex-lg-row-reverse align-items-center g-5 py-5"> {% endcomment %}
+    {% comment %} <div class="col-10 col-sm-8 col-lg-6"> {% endcomment %}
+      {% comment %} <img src="/static/images/favicon.ico" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"> {% endcomment %}
+    {% comment %} </div> {% endcomment %}
+    {% comment %} <div class="col-lg-6" style="color: wheat;"> {% endcomment %}
+      {% comment %} <h1 class="display-5 fw-bold lh-1 mb-3"><div class="color:#b53cde">A_Vastralaya</div><p style="font-size:20px; color:#30bfac; font-family:cursive;">You are at the right place</p><br><span class="display-6"> An exclusive premium online clothes store</span></h1> {% endcomment %}
+      {% comment %} <p class="lead">Get a variety of cloths items from various brands</p> {% endcomment %}
+    {% comment %} </div> {% endcomment %}
+  {% comment %} </div> {% endcomment %}
+{% comment %} </div> {% endcomment %}
+
+{% comment %} <div class="container my-5" style="color:wheat;">
+  <div class="row p-2 pb-0 pe-lg-0 pt-lg-4 align-items-center rounded-3 border shadow-lg" style="margin:0px; border:2px;">
+    <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+      <h1 class="display-4 fw-bold lh-1">UNWRAP STYLE</h1>
+      <p class="lead">We have a wide variety of products. PAHLE ISTEMAL KARE PFIR VISHWAS KARE!</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        <a href="/products/" type="button" class="btn btn-dark btn-lg px-4 me-md-2 fw-bold">Shop Now</a>
+      </div>
+    </div>
+    <div class="col-lg-4  shadow-lg">
+        <img class="rounded-lg-3" src="/static/images/Diwali_Sale_Photo.png" alt="" width="300px">
+    </div>
+  </div>
+</div> {% endcomment %}
+
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-light">&copy; 2022 A_Vastralaya, Inc</p>
+
+    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Created By</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Akash Chaurasia</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Agastya Sharma</a></li>
+      
+    </ul>
+  </footer>
+</div>
+
+{% endblock content %}
+

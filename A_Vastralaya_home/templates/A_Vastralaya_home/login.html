@@ -1,0 +1,64 @@
+{% extends 'A_Vastralaya_home/base.html' %}
+
+{% block content %}
+
+{% block title %}
+<title> Log in </title>
+{% endblock title %}
+
+<br>
+<br>
+<br>
+{% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+<div class="container mt-0"  >
+    <br>
+    <br>
+    <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+    <h3 class="text-center" style="color:yellow; text-size:100px;">Login</h3>
+    
+    <form  method="post">
+    {% csrf_token %}
+      
+
+    <div class="form-group">
+    
+    <label for="username" style="color:7FFFD4">Username</label>
+    <input style="background-color:#FFDBB0" type="username" placeholder="Enter your username"class="form-control" name="username"  required>
+    
+    </div>
+    
+    <div class="form-group">
+    
+    <label for="password" style="color:7FFFD4">Confirm Password</label>
+    <input style="background-color:#FFDBB0" type="password" placeholder="Enter your password"class="form-control" name="password" required>
+    
+    </div>
+    <br>
+    <button type="submit" class="btn btn-warning btn-sm btn-block">Log in</button>
+    
+    </form>
+    
+    <p class="text-warning mt-3">Not a User? 
+    <a href="{% url 'register' %}" style="background-color:yellow; border-radius:10px; border-width:5px; padding:5px; border-color:green;"> Sign up</a>
+    </p>
+    </div>
+    
+    
+    </div>
+        
+    <div class="col-md-3"></div>
+    
+    </div>
+    
+    </div>
+
+{% endblock content %}

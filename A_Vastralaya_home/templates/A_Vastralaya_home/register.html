@@ -1,0 +1,83 @@
+{% extends 'A_Vastralaya_home/base.html' %}
+
+{% block title %}
+<title> Register </title>
+{% endblock title %}
+{% block content %}
+
+<br>
+<br>
+<br>
+{% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+
+<div class="container mt-3" >
+    <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6" style="color:beige;">
+    <h3 class="text-center" style="color:yellow">Sign Up</h3>
+    
+    <form  method='POST'>
+        {% csrf_token %}
+        <div class="form-group">
+        
+        <label for="fname" style="color:7FFFD4">First Name</label>
+        <input style="background-color:#FFDBB0" type="text" placeholder="Enter your first name" class="form-control" name="fname"  required>
+        </div>
+        <div class="form-group">
+
+        <label for="lname" style="color:7FFFD4">Last Name</label>
+        <input style="background-color:#FFDBB0" type="text" placeholder="Enter your Last name"class="form-control" name="lname"  required>
+        
+        </div>
+        <div class="form-group">
+        
+        <label for="username" style="color:7FFFD4">Username</label>
+        <input style="background-color:#FFDBB0" type="text" placeholder="Enter your UserName here" class="form-control" name="username"  required>
+    
+        </div>
+        <div class="form-group">
+        
+        <label for="email" style="color:7FFFD4">Email Address</label>
+        <input style="background-color:#FFDBB0" type="email" placeholder="Enter your Email id" class="form-control" name="email"  required>
+        
+        </div>
+        
+        <div class="form-group">
+        
+        <label for="password1" style="color:7FFFD4">Password</label>
+        <input style="background-color:#FFDBB0" type="password" placeholder="Enter password" class="form-control" name="password1" required>
+        
+        </div>
+        <div class="form-group">
+        
+        <label for="password2" style="color:7FFFD4">Confirm Password</label>
+        <input style="background-color:#FFDBB0" type="password" placeholder="Re-Enter the password" class="form-control" name="password2" required>
+        
+        </div>
+        
+        <button type="submit" class="btn btn-warning btn-block" style="background-color:DCDOFF">SignUp</button>
+        
+    </form>
+    
+    <p class="text-warning mt-3">Already  User? 
+    <a href="{% url "login" %}" style="background-color:yellow; border-radius:5px; border-width:5px; padding:5px;">Login</a>
+    </p>
+    </div>
+ 
+    
+</div>
+    
+    
+<div class="col-md-3"></div>
+
+</div>
+
+</div>
+    
+{% endblock content %}

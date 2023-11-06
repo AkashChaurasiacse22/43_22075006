@@ -1,0 +1,81 @@
+{% extends 'A_Vastralaya_home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% if products %}
+    <section class="h-100" style="background-color: #783756;">
+        <div class="container h-100 py-5">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-10">
+                    
+                    
+                    
+                    <div class=" d-flex justify-content-between m-4">
+                        <h3 class="fw-normal mb-0 text-warning"> Cart ({{ n_items }})</h3>
+                        <a href="/checkout_fromcart/" type="button" class="btn btn-warning btn-block btn-lg">Proceed to buy</a>
+                    </div>
+                    
+              {% for product in products %}
+              <div class="card rounded-3 mb-4">
+                  <div class="card-body p-4">
+                      <div class="row d-flex justify-content-between align-items-center">
+                          <div class="col-md-2 col-lg-2 col-xl-2">
+                              <img
+                              src="/{{ product.p_image}}"
+                              class="img-fluid rounded-3"  alt="Cotton T-shirt">
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xl-3">
+                                <p class="lead fw-normal mb-2">{{product.p_name}}</p>
+                      <p><span class="text-muted">Brand:</span>{{ product.p_brand}} <span class="text-muted"></p>
+                    </div>
+                    
+                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                        <h5 class="mb-0">₹{{ product.p_price }}</h5>
+                    </div>
+                    <div class="col-md-2">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="id" visibility="false" value="{{product.id}}">
+                            <button type="submit" class="btn btn-danger">Remove</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+        
+        
+        
+    </div>
+    
+        </div>
+    </div>
+</section>
+{% else %}
+<style>
+    .cta-button {
+    display: inline-block;
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+</style>
+<div class="card d-flex justify-content-center container text-center" style="height: 90vh; background-color:783756; border-color:783756">
+    
+    <h1 class="display-5" style="color:7FFFD4">Your Cart is Empty</h1>
+    <div><a href="/products/" class="cta-button">Shop Now</a></div>
+</div>
+
+{% endif %}
+
+
+
+
+
+{% endblock content %}
